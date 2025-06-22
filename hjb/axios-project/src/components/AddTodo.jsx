@@ -1,6 +1,7 @@
 import axiosClient from "../utils/axiosClient";
 import { useState } from "react";
 import styled from "styled-components";
+import instance from "../utils/axiosClient";
 
 const Container = styled.div`
   background-color: aliceblue;
@@ -80,7 +81,7 @@ export default function AddTodo() {
     }
 
     try {
-      const response = await axiosClient.post("/e7ad-247e-46cf-b3d5", {
+      const response = await instance.post("/e7ad-247e-46cf-b3d5", {
         fields: {
           name,
           writer,
