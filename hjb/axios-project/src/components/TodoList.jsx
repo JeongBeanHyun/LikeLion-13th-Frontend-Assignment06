@@ -40,7 +40,7 @@ const Span = styled.span`
 `;
 
 export default function TodoList() {
-  const { data: todos } = useFetch("/dc48-4215-4652-b1ba");
+  const { data: todos } = useFetch("");
 
   return (
     <Container>

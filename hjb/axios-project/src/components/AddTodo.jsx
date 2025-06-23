@@ -1,7 +1,6 @@
-import axiosClient from "../utils/axiosClient";
 import { useState } from "react";
 import styled from "styled-components";
-import instance from "../utils/axiosClient";
+import { postInstance } from "../utils/axiosClient";
 
 const Container = styled.div`
   background-color: aliceblue;
@@ -81,7 +80,7 @@ export default function AddTodo() {
     }
 
     try {
-      const response = await instance.post("/e7ad-247e-46cf-b3d5", {
+      const response = await postInstance.post("", {
         fields: {
           name,
           writer,
@@ -89,8 +88,7 @@ export default function AddTodo() {
         },
       });
 
-      console.log("과제 등록 성공!"); //과제 등록 성공시 콘솔 출력
-      console.log(response.data); //투두리스트 콘솔 출력
+      console.log("과제 등록 성공!", response.data); //과제 등록 성공시 콘솔 출력
 
       //과제 등록 후 초기화
       setName("");

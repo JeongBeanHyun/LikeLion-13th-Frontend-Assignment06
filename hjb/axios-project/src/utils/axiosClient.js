@@ -1,9 +1,12 @@
 import axios from "axios";
 
-const apiUrl = import.meta.env.VITE_API_URL;
+const getUrl = import.meta.env.VITE_API_GET;
+const postUrl = import.meta.env.VITE_API_POST;
 
-const instance = axios.create({
-  baseURL: apiUrl,
+export const getInstance = axios.create({
+  baseURL: getUrl,
 });
 
-export default instance;
+export const postInstance = axios.create({
+  baseURL: postUrl,
+});
